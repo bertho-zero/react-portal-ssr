@@ -30,7 +30,7 @@ export const Portal: React.FunctionComponent<{ selector?: string }> = ({ childre
 
 export function prepareClientPortals() {
     if (typeof window !== 'undefined') {
-        Array.prototype.slice.call(document.querySelectorAll(`[${portalSelector}]`)).forEach((node: Element) => {
+        Array.from(document.querySelectorAll(`[${portalSelector}]`), (node: Element) => {
             node.remove()
         })
     }
